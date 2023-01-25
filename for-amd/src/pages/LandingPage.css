@@ -1,17 +1,7 @@
-h1 {
-    text-align: center;
-    font-family: "Google Sans";
-    min-height: 100vh;
-    /* justify-content: center; */
-}
-
 .Landing {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -100px 0 0 -100px;
-  font-family: "Google Sans";
+  text-align: center;
+  margin-top: 20%;
+  font-family: Georgia, Times, serif;
+  font-size: 30px;
   color: #404753
 }

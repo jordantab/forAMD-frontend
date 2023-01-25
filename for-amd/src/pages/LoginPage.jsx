@@ -3,7 +3,9 @@ import './LoginPage.css'
 
 function LoginPage() {
     return (
-        <LoginBox />
+        <div className="LoginPage">
+            <LoginBox />    
+        </div>
     )
 }
 

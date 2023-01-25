@@ -6,24 +6,23 @@
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    /* display: flex; */
     border-radius: 5%;
-    /* text-align: center; */
 }
 
 
 .Welcome{
-    /* text-align: center; */
     color: #F3E5AB;
-    font-family: Google Sans;
+    font-family: Georgia, Times, serif;
+    margin-top: 20%;
     text-align: center;
-    font-size: 60px;
+    font-size: 55px;
 
 }
 
 .Username {
     height:20px;
     text-align: left;
+    margin-top: 30%;
     padding-left: 20px;
 }
 
@@ -51,4 +50,5 @@
 
 button {
     margin-left: 20px;
+    color: black
 }
