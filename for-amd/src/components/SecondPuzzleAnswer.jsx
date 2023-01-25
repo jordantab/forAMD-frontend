@@ -13,7 +13,7 @@ function SecondPuzzleAnswer() {
             answer : answer.current.value
         }
 
-        axios.post('http://127.0.0.1:8000/verifyPuzzle/',input).then((response => {
+        axios.post('https://for-amd.herokuapp.com/verifyPuzzle/',input).then((response => {
             if (response.data == 'True'){
                 hist('/thirdpuzzle')
             }
