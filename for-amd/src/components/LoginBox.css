@@ -1,0 +1,54 @@
+.Box{
+    width:430px;
+    height:520px;
+    background-color:#336A66;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    /* display: flex; */
+    border-radius: 5%;
+    /* text-align: center; */
+}
+
+
+.Welcome{
+    /* text-align: center; */
+    color: #F3E5AB;
+    font-family: Google Sans;
+    text-align: center;
+    font-size: 60px;
+
+}
+
+.Username {
+    height:20px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.Username p {
+    color: #F8F7EF;
+}
+
+.usernameInput {
+    padding-left: 20px;
+}
+
+.Password {
+    height:20px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.Password p {
+    color: #F8F7EF;
+}
+
+.passwordInput {
+    padding-left: 20px;
+}
+
+button {
+    margin-left: 20px;
+}
