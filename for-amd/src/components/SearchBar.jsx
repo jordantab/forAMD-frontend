@@ -1,4 +1,5 @@
 import './SearchBar.css';
+import React from 'react';
 import { Link , useNavigate} from "react-router-dom";
 import { useEffect , useState } from 'react';
 import axios from 'axios';
@@ -14,7 +15,10 @@ const Icon = () => {
 function SearchBar({placeHolder, options}) {
     const [showMenu, setShowMenu] = useState(false);
     const [selectedValue, setSelectedValue] = useState(null)
+    const [searchClicked, setSearchClicked] = useState(false)
     const hist = useNavigate();
+    const [photo1, setPhoto1] = useState("");
+    const [urls, setUrls] = useState([])
 
     useEffect(() => {
         const handler = () => setShowMenu(false);
@@ -50,41 +54,57 @@ function SearchBar({placeHolder, options}) {
     }
 
     function fetchAlbum() {
+        setSearchClicked(!searchClicked)
+
         if (selectedValue.value === 'Surprise') {
             // console.log(selectedValue.value);
             hist('/surprise')
         }
         else{
         axios.post('https://for-amd.herokuapp.com/fetchAlbum/', selectedValue).then((response => {
-            console.log(response.data)
+            console.log(response)
+            // const photo = response.data
+            // setPhoto1(photo)
+            setUrls(response.data)
         }
         ))
         }
     }
     return (
         <div>
-    <div className="dropdown-container">
-        <div onClick={handleInputClick} className="dropdown-input">
-        <div className="dropdown-selected-value">{getDisplay()}</div>
-        <div className="dropdown-tools">
-                <div className="dropdown-tool">
-                    <Icon />
-                </div>
-                </div>
-                </div>
-                {showMenu && (
-        <div className='dropdown-menu'>
-            {options.map((option) => (
-                <div 
-                onClick={() => onItemClick(option)}
-                key={option.value} 
-                className={'dropdown-item ${isSelected(option) && "selected"}'}>
-                    {option.label}
-                </div>
+            {searchClicked ?
+            <>
+            {urls.map(url => (
+                <img key={url} src={url} alt="" />
             ))}
-            </div>)}
-    </div>
-    <button onClick={fetchAlbum}>Search</button>
+            <img src={photo1}/>
+            </>
+            :
+            <> 
+            <div className="dropdown-container">
+                <div onClick={handleInputClick} className="dropdown-input">
+                <div className="dropdown-selected-value">{getDisplay()}</div>
+                <div className="dropdown-tools">
+                        <div className="dropdown-tool">
+                            <Icon />
+                        </div>
+                        </div>
+                        </div>
+                        {showMenu && (
+                <div className='dropdown-menu'>
+                    {options.map((option) => (
+                        <div 
+                        onClick={() => onItemClick(option)}
+                        key={option.value} 
+                        className={'dropdown-item ${isSelected(option) && "selected"}'}>
+                            {option.label}
+                        </div>
+                    ))}
+                    </div>)}
+            </div>
+            <button onClick={fetchAlbum}>Search</button>
+            </>
+            }
     </div>
     );
 }
