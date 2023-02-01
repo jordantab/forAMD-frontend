@@ -62,7 +62,7 @@ function SearchBar({placeHolder, options}) {
             hist('/surprise')
         }
         else{
-        axios.post('http://127.0.0.1:8000/fetchAlbum/', selectedValue).then((response => {
+        axios.post('https://for-amd.herokuapp.com/fetchAlbum/', selectedValue).then((response => {
             console.log(response.data)
             // const photo = response.data
             // setPhoto1(photo)
