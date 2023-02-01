@@ -14,7 +14,7 @@
 } */
 
 .Boxes {
-    background-image: url('/Users/tarkantaboglu/Desktop/Random Projects/forAMD-frontend/for-amd/public/assets/images/Backgrounds/IMG_5828.jpg');
+    background-image: url('../../public/assets/images/Backgrounds/IMG_5828.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
