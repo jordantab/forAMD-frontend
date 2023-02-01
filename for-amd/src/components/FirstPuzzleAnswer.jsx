@@ -26,6 +26,7 @@ function FirstPuzzleAnswer() {
     return (
         <div>
             <div className='answerInput'>
+                <p>Format answer as Month Day (ex: January 1)</p>
                 <input
                 type="text"
                 id="header-search"

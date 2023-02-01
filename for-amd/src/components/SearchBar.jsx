@@ -18,7 +18,8 @@ function SearchBar({placeHolder, options}) {
     const [searchClicked, setSearchClicked] = useState(false)
     const hist = useNavigate();
     const [photo1, setPhoto1] = useState("");
-    const [urls, setUrls] = useState([])
+    const [photoUrls, setPhotoUrls] = useState([])
+    const [videoUrls, setVideoUrls] = useState([])
 
     useEffect(() => {
         const handler = () => setShowMenu(false);
@@ -61,26 +62,31 @@ function SearchBar({placeHolder, options}) {
             hist('/surprise')
         }
         else{
-        axios.post('https://for-amd.herokuapp.com/fetchAlbum/', selectedValue).then((response => {
-            console.log(response)
+        axios.post('http://127.0.0.1:8000/fetchAlbum/', selectedValue).then((response => {
+            console.log(response.data)
             // const photo = response.data
             // setPhoto1(photo)
-            setUrls(response.data)
+            setPhotoUrls(response.data.photos)
+            if ('videos' in response.data){
+                setVideoUrls(response.data.videos)
+            }
         }
         ))
         }
     }
     return (
         <div>
-            {searchClicked ?
+            {/* {searchClicked ?
             <>
-            {urls.map(url => (
-                <img key={url} src={url} alt="" />
+            {photoUrls.map(url => (
+                <img key={url} src={url} alt="" controls/>
             ))}
-            <img src={photo1}/>
+            {videoUrls.map(url => (
+                <video key={url} src={url} alt="" controls/>
+            ))}
             </>
             :
-            <> 
+            <>  */}
             <div className="dropdown-container">
                 <div onClick={handleInputClick} className="dropdown-input">
                 <div className="dropdown-selected-value">{getDisplay()}</div>
@@ -91,7 +97,7 @@ function SearchBar({placeHolder, options}) {
                         </div>
                         </div>
                         {showMenu && (
-                <div className='dropdown-menu'>
+                            <div className='dropdown-menu'>
                     {options.map((option) => (
                         <div 
                         onClick={() => onItemClick(option)}
@@ -101,10 +107,17 @@ function SearchBar({placeHolder, options}) {
                         </div>
                     ))}
                     </div>)}
+                    <button onClick={fetchAlbum}>Search</button>
             </div>
-            <button onClick={fetchAlbum}>Search</button>
-            </>
-            }
+            
+                    {photoUrls.map(url => (
+                        <img key={url} src={url} alt="" controls/>
+                    ))}
+                    {videoUrls.map(url => (
+                        <video key={url} src={url} alt="" controls/>
+                    ))}
+            {/* </> */}
+            
     </div>
     );
 }

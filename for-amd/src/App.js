@@ -8,6 +8,7 @@ import FirstPuzzlePage from './pages/FirstPuzzlePage.jsx';
 import SecondPuzzlePage from './pages/SecondPuzzlePage.jsx';
 import ThirdPuzzlePage from './pages/ThirdPuzzlePage.jsx';
 import './App.css';
+import DecisionPage from "./pages/DecisionPage.jsx";
 // // Import the functions you need from the SDKs you need
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
@@ -38,6 +39,7 @@ function App() {
         <Routes>
           <Route index element={<LandingPage/>}/>
           <Route path='/login' element={<LoginPage/>}/>
+          <Route path='/decisions' element={<DecisionPage/>}/>
           <Route path='/events' element={<EventsPage/>}/>
           <Route path='/error' element={<ErrorPage/>}/>
           <Route path='/surprise' element={<SurprisePage/>}/>

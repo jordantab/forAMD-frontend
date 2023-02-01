@@ -16,9 +16,9 @@ function LoginBox() {
             password : password.current.value
         }
 
-        axios.post('https://for-amd.herokuapp.com/verifyLogin/',inputs).then((response => {
+        axios.post('http://127.0.0.1:8000/verifyLogin/',inputs).then((response => {
             if (response.data == 'True'){
-                hist('/events')
+                hist('/decisions')
             }
             else if (response.data == "False") {
                 hist('/error')

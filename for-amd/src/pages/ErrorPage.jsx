@@ -2,7 +2,10 @@ import './ErrorPage.css'
 
 function ErrorPage() {
     return (
-        <p>Looks like you fucked up buddy</p>
+        <div className='error'>
+            <p>Looks like you fucked up buddy</p>
+        </div>
+        
     )
 }
 
