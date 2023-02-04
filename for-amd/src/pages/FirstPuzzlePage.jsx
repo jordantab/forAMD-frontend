@@ -36,7 +36,7 @@ function FirstPuzzlePage() {
                     .pauseFor(700)
                     .typeString("<br>")
                     .typeString("What date am I?")
-                    .pauseFor(1000)
+                    .pauseFor(2000)
                     .callFunction(answerInput)
                     .start()
                 }}/>
