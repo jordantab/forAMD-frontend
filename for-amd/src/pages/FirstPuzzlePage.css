@@ -1,28 +1,25 @@
 .riddle{
-    width: 35%;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
     text-align: center;
     margin: auto;
     justify-content: center;
     font-size: 200%;
+    font-weight: bold;
     font-family: Georgia, Times, serif;
 }
 
 .puzzle-1{
     position:absolute;
-    top:50%;
+    top: 30%;
     left:50%;
     transform:translate(-50%,-50%);
 }
 
 .answer-input{
     position:absolute;
-    top:85%;
+    top:130%;
     left:50%;
     transform:translate(-50%,-50%);
     text-align: center;
-    font-size: 90%;
+    font-size: 10%;
     font-family: Georgia, Times, serif;
 }
