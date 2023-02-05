@@ -1,9 +1,6 @@
 import NavBar from "../components/NavBar"
 import './LandingPage.css'
-import myVideo from "../videos/1.MOV";
-import myVideo2 from "../videos/nye1.MOV";
-import myVideo3 from "../videos/2.MOV";
-import myVideo4 from "../videos/facemasks.MOV";
+import myVideo from "../videos/nye1.MOV";
 
 
 function LandingPage() {
