@@ -24,7 +24,6 @@ function EventsPage() {
         {value: 'JT 22nd Birthday', label:'JT 22nd Birthday'},
         {value: 'Christmas', label:'Christmas'},
         {value: 'NYE', label:'NYE'},
-        {value: 'Surprise', label:'Surprise'},
     ]
     
     return (

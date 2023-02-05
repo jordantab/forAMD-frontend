@@ -1,6 +1,6 @@
 import './SearchBar.css';
 import React from 'react';
-import { Link , useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { useEffect , useState } from 'react';
 import axios from 'axios';
 
@@ -17,7 +17,6 @@ function SearchBar({placeHolder, options}) {
     const [selectedValue, setSelectedValue] = useState(null)
     const [searchClicked, setSearchClicked] = useState(false)
     const hist = useNavigate();
-    const [photo1, setPhoto1] = useState("");
     const [photoUrls, setPhotoUrls] = useState([])
     const [videoUrls, setVideoUrls] = useState([])
 
@@ -55,7 +54,7 @@ function SearchBar({placeHolder, options}) {
     }
 
     function fetchAlbum() {
-        setSearchClicked(!searchClicked)
+        // setSearchClicked(!searchClicked)
 
         if (selectedValue.value === 'Surprise') {
             // console.log(selectedValue.value);
@@ -64,8 +63,6 @@ function SearchBar({placeHolder, options}) {
         else{
         axios.post('https://for-amd.herokuapp.com/fetchAlbum/', selectedValue).then((response => {
             console.log(response.data)
-            // const photo = response.data
-            // setPhoto1(photo)
             setPhotoUrls(response.data.photos)
             if ('videos' in response.data){
                 setVideoUrls(response.data.videos)
@@ -76,17 +73,6 @@ function SearchBar({placeHolder, options}) {
     }
     return (
         <div>
-            {/* {searchClicked ?
-            <>
-            {photoUrls.map(url => (
-                <img key={url} src={url} alt="" controls/>
-            ))}
-            {videoUrls.map(url => (
-                <video key={url} src={url} alt="" controls/>
-            ))}
-            </>
-            :
-            <>  */}
             <div className="dropdown-container">
                 <div onClick={handleInputClick} className="dropdown-input">
                 <div className="dropdown-selected-value">{getDisplay()}</div>
@@ -116,7 +102,6 @@ function SearchBar({placeHolder, options}) {
                     {videoUrls.map(url => (
                         <video key={url} src={url} alt="" controls/>
                     ))}
-            {/* </> */}
             
     </div>
     );

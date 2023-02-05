@@ -1,13 +1,11 @@
 import NavBar from "../components/NavBar"
 import './LandingPage.css'
-import ReactPlayer from "react-player"
 import myVideo from "./1.MOV";
 
 
 function LandingPage() {
     return (
         <div className="Landing">
-            
             <video loop autoPlay muted>
                 <source src={myVideo} type="video/mp4"/>
             </video>
