@@ -16,6 +16,7 @@ function FirstPuzzlePage() {
                 <Typewriter 
                 onInit={(typewriter) => {
                     typewriter
+                    .pauseFor(1500)
                     .changeDelay(70)
                     .typeString("I'm a fateful day,")
                     .pauseFor(700)
