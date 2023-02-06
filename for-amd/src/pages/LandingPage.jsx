@@ -11,7 +11,7 @@ function LandingPage() {
             </video>
             <h2>a trip down memory lane</h2>
             <div className="navbar">
-            <NavBar className="navbar"/>
+            <NavBar/>
             </div>
         </div>
     )

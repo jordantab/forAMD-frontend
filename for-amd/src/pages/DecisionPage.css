@@ -1,45 +1,80 @@
-/* .Background{
-    background-image: url('/Users/tarkantaboglu/Desktop/Random Projects/forAMD-frontend/for-amd/public/assets/images/Backgrounds/IMG_5828.jpg');
-    flex-direction: row;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100vh;
-    opacity: 0.4;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    
-} */
 
-.Boxes {
-    background-image: url('../../public/assets/images/Backgrounds/IMG_5828.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    height: 100vh; 
-}
-
-.box {
-    opacity: 0.75;
-    width: 30%; 
-    height: 10%;
-    background-color: #F8F7EF; 
-    margin: 5%; 
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes:regular,bold,cursive,italic&subset=latin,latin-ext');
+.Decisions body{
+    padding: 0;
+    margin: 0!important;
     display: flex;
-    justify-content: center;
     align-items: center;
-  }
-
-p{
-  font-size: 20px;
-  font-weight: bold;
-  color: black;
-  font-family: Georgia, Times, serif;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box 
 }
 
+.Decisions img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Decisions video{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay{
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  position: absolute;
+  background-color: #F8F7EF!important;
+}
+
+.navbar{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+}
+.Boxes {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  color:#F8F7EF;
+}
+
+.Boxes p{
+  color:black;
+  text-align: center;
+  vertical-align: middle;
+  font-family: "Great Vibes" !important;
+}
+
+.Boxes button{
+  width: 50%;
+  height: 100%;
+  margin: auto;
+  background-color: transparent;
+  color:#F8F7EF!important;
+  font-size: 70px;
+  font-weight: bolder;
+  text-align: center;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+}
