@@ -21,8 +21,8 @@ function DecisionPage() {
 
     return (
         <div className="Decisions">
-            <img src={facemasks}/>
-            <video src={confetti} autoPlay loop muted/>
+            <video className='eventsVideo' src={facemasks} autoPlay loop muted/>
+            <video className='surpriseVideo' src={confetti} autoPlay loop muted/>
             <div className="overlay"></div>
             
             <div className="navbar">
