@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import './DecisionPage.css'
-import facemasks from '../videos/2.MOV'
+import facemasks from '../videos/facemasks.MOV'
 import confetti from '../videos/confetti.mov'
 
 function DecisionPage() {

@@ -77,4 +77,9 @@
   padding: 0;
   cursor: pointer;
   border: none;
+  transition: background-color 2s ease-out 100ms;
+}
+
+.Boxes button:hover {
+  background-color: #FFD1C2;
 }
