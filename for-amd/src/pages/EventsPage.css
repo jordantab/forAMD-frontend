@@ -1,1 +1,74 @@
+.backArrowImage{
+    top: 4%;
+    left: 3%;
+    width: 3%;
+    position: absolute;
+    height: 3%;
+}
+.backArrow button {
+    border: none;
+    position: absolute;
+    top: 4%;
+}
+.backArrowImage img {
+    width: 100%;
+    height: 100%;
+    /* top:-200%; */
+    position: absolute;
+}
 
+.backArrowButton {
+    position: absolute;
+    top: 4%;
+    left: 1%;
+    width: 4%;
+    height: 4%;
+}
+
+.backArrowButton button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -10%;
+    left: 0;
+    background-color: transparent;
+    border: none;
+    /* transition: background-color 0.4s ease-out 100ms; */
+    transition: all 0.1s ease-in-out;
+}
+
+.backArrowButton button:hover {
+    border-radius: 20%;
+    border: none;
+    box-shadow: 0 0 10px 5px #336A66;
+}
+
+.events{
+    top: 15%;
+    left: 6%;
+    width: 35%;
+    height: 85%;
+    position: absolute;
+}
+
+
+.events li{
+    margin: 4%;
+}
+
+.events ul{
+    font-size: 20px;
+}
+
+.photos {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    width: 60%;
+}
+
+.photos img{
+    border-radius: 2%;
+    margin: 0.4%;
+    width: 32%;
+}

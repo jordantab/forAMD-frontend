@@ -1,35 +1,98 @@
 import './EventsPage.css'
-import SearchBar from '../components/SearchBar';
-// import axios from 'axios';
-// import { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import arrow from '../images/arrow.png';
+import axios from 'axios';
+import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 
 function EventsPage() {
+    const hist = useNavigate()
+    const [photoUrls, setPhotoUrls] = useState([])
+    const [clickedWord, setClickedWord] = useState(null);
 
     const options = [
-        {value: 'Newport', label:'Newport'},
-        {value: 'Nextdoor', label:'Nextdoor'},
-        {value: 'Icon', label:'Icon'},
-        {value: 'Brookline Park', label:'Brookline Park'},
-        {value: 'TITS', label:'TITS'},
-        {value: 'Red Sox Game', label:'Red Sox Game'},
-        {value: 'Bay State Bench', label:'Bay State Bench'},
-        {value: 'Manti, Wine, Face Masks', label:'Manti, Wine, Face Masks'},
-        {value: 'Korean BBQ', label:'Korean BBQ'},
-        {value: 'Celtics Game', label:'Celtics Game'},
-        {value: 'Halloween', label:'Halloween'},
-        {value: 'Lola42', label:'Lola42'},
-        {value: 'Italian Cooking Class', label:'Italian Cooking Class'},
-        {value: 'Athlete Formal', label:'Athlete Formal'},
-        {value: 'JT 22nd Birthday', label:'JT 22nd Birthday'},
-        {value: 'Christmas', label:'Christmas'},
-        {value: 'NYE', label:'NYE'},
+        'Newport',
+        'Nextdoor',
+        'Icon',
+        'Brookline Park',
+        'TITS',
+        'Red Sox Game',
+        'Bay State Bench',
+        'Manti, Wine, Face Masks',
+        'Korean BBQ',
+        'Celtics Game',
+        'Halloween',
+        'Lola42',
+        'Italian Cooking Class',
+        'Athlete Formal',
+        'JT 22nd Birthday',
+        'Christmas',
+        'NYE'
     ]
+    function goBack() {
+        hist('/decisions')
+    }
     
+    const Word = ({word}) => {
+        const [isHovered, setIsHovered] = useState(false)
+        const isClicked = word === clickedWord
+
+        return (
+            <li
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              fontSize: isHovered || isClicked ? '1.2em' : '1em',
+              fontWeight: isHovered || isClicked ? 'bold' : 'normal'
+            }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onClick={() => {
+              setClickedWord(word);
+              fetchAlbum(word);
+            }}
+          >
+            {(isHovered || isClicked) && (
+                <FontAwesomeIcon icon={faArrowRight} style={{ marginRight: '5px' }} />
+                )}
+                {word}
+          </li>
+        )
+        }
+      
+
+    function fetchAlbum(selectedValue) {
+        console.log(selectedValue)
+        axios.post('http://127.0.0.1:8000/fetchAlbum/', selectedValue).then((response => {
+            setPhotoUrls(response.data.photos)
+        }
+        ))
+        }
+
     return (
         <div>
-            <h2>Pick an Event</h2>
-            <SearchBar placeHolder='Select...' options={options}/>
+            <div className="backArrowImage">
+                <img src={arrow}/>
+            </div>
+            <div className="backArrowButton">
+                <button onClick={goBack}></button>
+            </div>
+            <div className="events">
+                <ul style={{listStyleType: 'none'}}>
+                    {options.map((option) => (
+                        <Word key={option} word={option} />
+                    ))}
+                </ul>
+            </div>
+            <div className="photos">
+                {photoUrls.map(url => (
+                    <img key={url} src={url} alt="" controls/>
+                ))}
+            </div>
+            
+            {/* <SearchBar placeHolder='Select...' options={options}/> */}
         </div>
     )
 }

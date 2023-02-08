@@ -36,13 +36,13 @@ function SearchBar({placeHolder, options}) {
 
     const getDisplay = () => {
         if (selectedValue) {
-            return selectedValue.label;
+            return selectedValue.value;
         }
         return placeHolder;
     };
 
     const onItemClick = (option) => {
-        setSelectedValue(option)
+        setSelectedValue(option.value)
     }
 
     const isSelected = (option) => {
@@ -89,7 +89,7 @@ function SearchBar({placeHolder, options}) {
                         onClick={() => onItemClick(option)}
                         key={option.value} 
                         className={'dropdown-item ${isSelected(option) && "selected"}'}>
-                            {option.label}
+                            {option.value}
                         </div>
                     ))}
                     </div>)}
