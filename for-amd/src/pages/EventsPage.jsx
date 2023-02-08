@@ -54,10 +54,10 @@ function EventsPage() {
               fetchAlbum(word);
             }}
           >
+              {word}
             {(isHovered || isClicked) && (
-                <FontAwesomeIcon icon={faArrowRight} style={{ marginRight: '5px' }} />
+                <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '5px' }} />
                 )}
-                {word}
           </li>
         )
         }
