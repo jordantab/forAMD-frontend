@@ -32,28 +32,11 @@ function DecisionPage() {
                 <button onClick={Events}>
                     <p>Events</p>
                 </button>
-                {/* <button onClick={Suggestions}>
-                    <p>Suggestions</p>
-                </button> */}
                 <button onClick={Surprise}>
                     <p>Surprise</p>
                 </button>
             </div>
         </div>
-        // <div className="Decision">
-        //     <NavBar />
-        // <div className="Boxes">
-        //             <button onClick={Events} className="box">
-        //                 <p>Events</p>
-        //             </button>
-        //             <button onClick={Suggestions} className="box">
-        //                 <p>Suggestions</p>
-        //             </button>
-        //             <button onClick={Surprise} className="box">
-        //                 <p>Surprise</p>
-        //             </button>
-        //     </div>
-        // </div>
     )
 }
 
