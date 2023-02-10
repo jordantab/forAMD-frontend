@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import './FirstPuzzleAnswer.css'
 
 function FirstPuzzleAnswer() {
     const answer = useRef()
     const hist = useNavigate()
+    const [shake, setShake] = useState(false)
     
     function verifyAnswer() {
         
@@ -14,19 +16,22 @@ function FirstPuzzleAnswer() {
         }
 
         axios.post('https://for-amd.herokuapp.com/verifyPuzzle/',input).then((response => {
-            if (response.data == 'True'){
+            if (response.data === 'True'){
                 hist('/secondpuzzle')
             }
-            else if (response.data == "False") {
-                hist('/error')
+            else if (response.data === "False") {
+                setShake(true)
+                setTimeout(() => {
+                  setShake(false)
+                }, 1000)
             }
         }
         ))
     }
     return (
         <div>
-            <div className='answerInput'>
                 <p>Format answer as Month Day (ex: January 1)</p>
+            <div className={`answerInput ${shake ? 'shake' : ''}`}>
                 <input
                 type="text"
                 id="header-search"
@@ -34,8 +39,8 @@ function FirstPuzzleAnswer() {
                 name="answer"
                 ref={answer}
                 />
+                <button onClick={verifyAnswer}>Submit</button>
             </div>
-            <button onClick={verifyAnswer}>Submit</button>
         </div>
     )
 }
