@@ -23,11 +23,9 @@
   .answer-input{
     position:absolute;
     top:110%;
-    left:15%;
-    /* transform:translate(-50%,-50%); */
+    left:23%;
     text-align: center;
     font-size: 60%;
-    /* font-family: Georgia, Times, serif; */
 }
 
 .answer-input input {

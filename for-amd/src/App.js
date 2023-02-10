@@ -9,27 +9,7 @@ import SecondPuzzlePage from './pages/SecondPuzzlePage.jsx';
 import ThirdPuzzlePage from './pages/ThirdPuzzlePage.jsx';
 import './App.css';
 import DecisionPage from "./pages/DecisionPage.jsx";
-// // Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
-
-// // Your web app's Firebase configuration
-// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCO1ORptB1TaLMEKkhk-4opxpqhBSIKiL0",
-//   authDomain: "foramd-1673835905474.firebaseapp.com",
-//   projectId: "foramd-1673835905474",
-//   storageBucket: "foramd-1673835905474.appspot.com",
-//   messagingSenderId: "453227253729",
-//   appId: "1:453227253729:web:c11916dd9ac5aaf3fdcca0",
-//   measurementId: "G-5452B8HPZV"
-// };
-
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+import SecondPuzzleBufferPage from "./pages/SecondPuzzleBufferPage.jsx";
 
 function App() {
   return (
@@ -44,6 +24,7 @@ function App() {
           <Route path='/error' element={<ErrorPage/>}/>
           <Route path='/surprise' element={<SurprisePage/>}/>
           <Route path='/firstpuzzle' element={<FirstPuzzlePage/>}/>
+          <Route path='/secondpuzzlecountdown' element={<SecondPuzzleBufferPage/>}/>
           <Route path='/secondpuzzle' element={<SecondPuzzlePage/>}/>
           <Route path='/thirdpuzzle' element={<ThirdPuzzlePage/>}/>
         </Routes>
