@@ -1,0 +1,24 @@
+
+.large-text{
+    position: absolute;
+    top: 8%;
+    left: 38%;
+    font-size: 400%;
+    font-family: Futura;
+}
+
+.description {
+    position: absolute;
+    top: 28%;
+    left: 34%;
+    font-family: Futura;
+    font-size: 150%;
+}
+
+.bottom-text{
+    position: absolute;
+    top: 65%;
+    left: 34.5%;
+    font-size: 150%;
+    font-family: Futura;
+}
