@@ -40,7 +40,7 @@ function FirstPuzzlePage() {
                 }}/>
                 {riddleDone ?
                 <>
-                    <div className='answer-input'>
+                    <div className='answer-input-1'>
                         <FirstPuzzleAnswer/>
                     </div>
                 </>

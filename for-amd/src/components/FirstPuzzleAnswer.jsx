@@ -31,7 +31,7 @@ function FirstPuzzleAnswer() {
     return (
         <div>
                 <p>Format answer as Month Day (ex: January 1)</p>
-            <div className={`answerInput ${shake ? 'shake' : ''}`}>
+            <div className={`answer-input ${shake ? 'shake' : ''}`}>
                 <input
                 type="text"
                 id="header-search"

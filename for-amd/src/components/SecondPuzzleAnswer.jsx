@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import './SecondPuzzleAnswer.css'
 
 function SecondPuzzleAnswer() {
     const answer = useRef()
     const hist = useNavigate()
+    const [shake, setShake] = useState(false)
     
     function verifyAnswer() {
         
@@ -18,14 +20,18 @@ function SecondPuzzleAnswer() {
                 hist('/thirdpuzzle')
             }
             else if (response.data == "False") {
-                hist('/error')
+                setShake(true)
+                setTimeout(() => {
+                  setShake(false)
+                }, 1000)
             }
         }
         ))
     }
     return (
         <div>
-            <div className='answerInput'>
+            <p>Format answer as City, Country (ex: Rome, Italy)</p>
+            <div className={`answer-input ${shake ? 'shake' : ''}`}>
                 <input
                 type="text"
                 id="header-search"
@@ -33,8 +39,8 @@ function SecondPuzzleAnswer() {
                 name="answer"
                 ref={answer}
                 />
-            </div>
             <button onClick={verifyAnswer}>Submit</button>
+            </div>
         </div>
     )
 }

@@ -1,8 +1,10 @@
 // In the CountdownClock.js component
 import React, { useState, useEffect } from 'react';
 import './CountdownClock.css';
+import { useNavigate } from "react-router-dom";
 
 const CountdownClock = ({ targetDate }) => {
+  const hist = useNavigate()
   const [timeRemaining, setTimeRemaining] = useState({
     days: 0,
     hours: 0,
@@ -17,6 +19,7 @@ const CountdownClock = ({ targetDate }) => {
       
       if (difference < 0) {
         clearInterval(intervalId);
+        hist('/secondpuzzle')
         return;
       }
       
