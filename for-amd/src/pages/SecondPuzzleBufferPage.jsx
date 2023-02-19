@@ -2,7 +2,7 @@ import CountdownClock from '../components/CountdownClock.jsx';
 import './SecondPuzzleBufferPage.css'
 
 const App = () => {
-  const targetDate = new Date('2023-02-17T22:50:00');
+  const targetDate = new Date('2023-02-20T11:00:00');
 
   return (
     <div className='back'>

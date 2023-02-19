@@ -10,6 +10,7 @@ import ThirdPuzzlePage from './pages/ThirdPuzzlePage.jsx';
 import './App.css';
 import DecisionPage from "./pages/DecisionPage.jsx";
 import SecondPuzzleBufferPage from "./pages/SecondPuzzleBufferPage.jsx";
+import SecondRewardPage from "./pages/SecondRewardPage.jsx"
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/firstpuzzle' element={<FirstPuzzlePage/>}/>
           <Route path='/secondpuzzlecountdown' element={<SecondPuzzleBufferPage/>}/>
           <Route path='/secondpuzzle' element={<SecondPuzzlePage/>}/>
+          <Route path='/secondreward' element={<SecondRewardPage/>}/>
           <Route path='/thirdpuzzle' element={<ThirdPuzzlePage/>}/>
         </Routes>
       </div>

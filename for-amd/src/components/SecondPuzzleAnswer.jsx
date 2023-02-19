@@ -17,7 +17,7 @@ function SecondPuzzleAnswer() {
 
         axios.post('https://for-amd.herokuapp.com/verifyPuzzle/',input).then((response => {
             if (response.data == 'True'){
-                hist('/thirdpuzzle')
+                hist('/secondreward')
             }
             else if (response.data == "False") {
                 setShake(true)
