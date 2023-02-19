@@ -2,7 +2,8 @@ import CountdownClock from '../components/CountdownClock.jsx';
 import './SecondPuzzleBufferPage.css'
 
 const App = () => {
-  const targetDate = new Date('2023-02-20T11:00:00');
+  const targetDate = new Date('February 20, 2023 10:00:00 EST');
+  const targetUtcTimestamp = Date.UTC(targetDate.getUTCFullYear(), targetDate.getUTCMonth(), targetDate.getUTCDate(), targetDate.getUTCHours(), targetDate.getUTCMinutes(), targetDate.getUTCSeconds());
 
   return (
     <div className='back'>
@@ -12,7 +13,7 @@ const App = () => {
         <div className="description">
             <p>The next step will be revealed in due time</p>
         </div>
-      <CountdownClock targetDate={targetDate} />
+      <CountdownClock targetDate={targetUtcTimestamp} />
       <div className="bottom-text">
         <p>Keep watch, the countdown has started!</p>
       </div>
