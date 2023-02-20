@@ -22,7 +22,7 @@ function SecondRewardPage () {
             // Send the email
         const templateParams = {
             to_name: 'Alexandra',
-            to_email: 'jordantab20@gmail.com', // Replace with the user's email address
+            to_email: 'alexandradaddabbo@gmail.com', // Replace with the user's email address
             from_name: 'Jordan Tab',
         }
 
