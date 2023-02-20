@@ -2,7 +2,8 @@
 .large-text{
     position: absolute;
     top: 8%;
-    left: 38%;
+    width: 100%;
+    text-align: center;
     font-size: 400%;
     font-family: Futura;
 }
@@ -10,7 +11,8 @@
 .description {
     position: absolute;
     top: 28%;
-    left: 34%;
+    width: 100%;
+    text-align: center;
     font-family: Futura;
     font-size: 150%;
 }
@@ -18,7 +20,8 @@
 .bottom-text{
     position: absolute;
     top: 65%;
-    left: 34.5%;
+    width: 100%;
+    text-align: center;
     font-size: 150%;
     font-family: Futura;
 }

@@ -2,6 +2,7 @@ import './BoardingPass.css'
 
 function BoardingPass() {
     return(
+        <div className="boarding-pass-container">
         <div className="rectangle-1">
             <div className="screen"></div>
             <div className="rectangle-2">
@@ -53,6 +54,7 @@ function BoardingPass() {
             <div className="dept-time-2-background">
                 <p>7:40</p>
             </div>
+        </div>
         </div>
     )
 }

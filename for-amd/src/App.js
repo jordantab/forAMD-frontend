@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import LandingPage from './pages/LandingPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import EventsPage from './pages/EventsPage.jsx';
@@ -11,6 +11,7 @@ import './App.css';
 import DecisionPage from "./pages/DecisionPage.jsx";
 import SecondPuzzleBufferPage from "./pages/SecondPuzzleBufferPage.jsx";
 import SecondRewardPage from "./pages/SecondRewardPage.jsx"
+import ThirdPuzzleBufferPage from "./pages/ThirdPuzzleBufferPage.jsx";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path='/secondpuzzlecountdown' element={<SecondPuzzleBufferPage/>}/>
           <Route path='/secondpuzzle' element={<SecondPuzzlePage/>}/>
           <Route path='/secondreward' element={<SecondRewardPage/>}/>
+          <Route path='/thirdpuzzlecountdown' element={<ThirdPuzzleBufferPage/>}/>
           <Route path='/thirdpuzzle' element={<ThirdPuzzlePage/>}/>
         </Routes>
       </div>

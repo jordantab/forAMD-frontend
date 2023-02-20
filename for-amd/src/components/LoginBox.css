@@ -1,6 +1,6 @@
 .Box{
-    width:430px;
-    height:520px;
+    width:25%;
+    height:60%;
     background-color:#336A66;
     position:absolute;
     top:50%;
@@ -15,7 +15,7 @@
     font-family: Georgia, Times, serif;
     margin-top: 20%;
     text-align: center;
-    font-size: 55px;
+    font-size: 350%;
 
 }
 
@@ -23,32 +23,44 @@
     height:20px;
     text-align: left;
     margin-top: 30%;
-    padding-left: 20px;
+    padding-left: 3%;
 }
 
 .Username p {
     color: #F8F7EF;
+    font-family: Georgia, Times, serif;
+    font-weight: 400;
+    font-size: 200%;
 }
 
 .usernameInput {
-    padding-left: 20px;
+    padding-left: 3%;
+    padding-top: 3%;
 }
 
 .Password {
     height:20px;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 3%;
 }
 
 .Password p {
     color: #F8F7EF;
+    font-family: Georgia, Times, serif;
+    font-weight: 400;
+    font-size: 200%;
 }
 
 .passwordInput {
-    padding-left: 20px;
+    padding-left: 3%;
+    padding-top: 3%;
 }
 
 button {
-    margin-left: 20px;
-    color: black
+    margin-top: 2%;
+    margin-left: 3%;
+    color: black;
+    border: none;
+    background-color: #F8F7EF;
+    cursor: pointer;
 }
